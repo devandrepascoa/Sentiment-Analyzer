@@ -1,5 +1,5 @@
 
-const GOOGLE_API_KEY = "AIzaSyDhXemqeJ-BmRtevnZADMNLe_wxPTsYtOA" //Google cloud API Key
+const GOOGLE_API_KEY = null //Google cloud API Key
 //Supported Languages
 const SUP_LANGS_SNT = {
     "en": "English",
