@@ -1,6 +1,5 @@
 const GOOGLE_API_KEY = "AIzaSyDhXemqeJ-BmRtevnZADMNLe_wxPTsYtOA" //Google cloud API Key, in the future this would be replaced with OAuth2 authentication
 
-<<<<<<< HEAD
 //Supported Languages for google news and google cloud sentimental analyzer
 const SUP_LANGS = [
     { sent: "en", news: "en-US", value: "English" },
@@ -45,21 +44,6 @@ var getLanguageValue = (lang_input, mode = "sent") => {
         else if (mode == "sent" && lang.sent == lang_input) return lang.value
     }
     return null
-=======
-const GOOGLE_API_KEY = null //Google cloud API Key
-//Supported Languages
-const SUP_LANGS_SNT = {
-    "en": "English",
-    "pt": "Portuguese",
-    "es": "Spanish",
-    "ko": "Korean",
-    "ja": "Japanese",
-    "it": "Italian",
-    "de": "German",
-    "fr": "French",
-    "zh": "Chinese(Simplified)",
-    "zh-Hant": "Chinese(Traditional)"
->>>>>>> cc3c53d88fba9a9337149b105946d008deb29272
 }
 
 /**
