@@ -1,0 +1,17 @@
+.top {
+    background-image: url("../images/sentiment-analysis.jpg");
+    height: 500px;
+}
+
+.mt-20 {
+    margin-top: 12em !important;
+}
+
+.display-3{
+    color: aliceblue;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}
+
+#curve_chart{
+    height: 500px;
+}

@@ -5,31 +5,73 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Sentiment Analyser</title>
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
-        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-</head>
-
-<body>
-    <form onsubmit="return false">
-        <input type="text" name="text" id="doc_snt">
-        <select id="sel_snt"></select>
-        <input type="submit" onclick="onFormSubmitted()" value="Analyze">
-    </form>
-    <div id="curve_chart" style="width: 900px; height: 500px"></div>
-
-    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
-    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
-        integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous">
-    </script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
-        integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous">
-    </script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
-        integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous">
-    </script>
+    <link rel="stylesheet" href="../css/dependencies/bootstrap.min.css">
+    <link rel="stylesheet" href="../css/style.css">
+    <script src="../js/dependencies/loader.js"></script>
+    <script src="../js/dependencies/jquery-3.2.1.slim.min.js"> </script>
+    <script src="../js/dependencies/popper.min.js"></script>
+    <script src="../js/dependencies/bootstrap.min.js">  </script>
+    <script src="../js/date_utils.js"></script>
     <script src="../js/sentiment_analyzer.js"></script>
     <script src="../js/news_scraper.js"></script>
     <script src="../js/script.js"></script>
+</head>
+
+<body>
+    <div class="container-fluid top">
+        <h1 class="display-3 text-center pt-5">Sentiment Analyzer</h1>
+        <form onsubmit="return false" class="mt-20">
+            <div class="form-row justify-content-center">
+                <div class="col-3">
+                    <textarea name="text" class="form-control" id="doc_snt" cols="30" rows="1"></textarea>
+                </div>
+                <div class="col-2">
+                    <select class="form-control" id="sel_snt"></select>
+                </div>
+            </div>
+            <div class="row mt-4 pb-5">
+                <div class="col text-center">
+                    <input type="submit" class="btn btn-primary" onclick="onFormSubmitted()" value="Analyze">
+                </div>
+            </div>
+        </form>
+    </div>
+
+    <div class="container mt-5">
+        <ul class="nav nav-pills nav-fill" id="myTab" role="tablist">
+            <li class="nav-item">
+                <a class="nav-link" id="news-tab" data-toggle="tab" href="#profile" role="tab" aria-controls="news"
+                    aria-selected="false">Google News</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link active" id="text-tab" data-toggle="tab" href="#contact" role="tab"
+                    aria-controls="text" aria-selected="true">Document</a>
+            </li>
+        </ul>
+        <div class="tab-content" id="myTabContent">
+
+            <div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="news-tab">
+
+                <table class="table mt-5">
+                    <thead class="thead-dark">
+                        <tr>
+                            <th scope="col">#</th>
+                            <th scope="col">Headline</th>
+                            <th scope="col">Sentiment</th>
+                        </tr>
+                    </thead>
+                    <tbody id="top5-table-body">
+                    </tbody>
+                </table>
+
+                <div id="curve_chart" class="mt-5"></div>
+            </div>
+
+            <div class="tab-pane fade show active" id="contact" role="tabpanel" aria-labelledby="text-tab">
+                <h3 id="doc_res" class="text-center mt-5"></h3>
+            </div>
+        </div>
+    </div>
 </body>
 
 </html
