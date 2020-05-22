@@ -1,12 +1,3 @@
-const SUP_LANGS_NEWS = {
-    "ko": "Korean",
-    "ja": "Japanese",
-    "it": "Italian",
-    "de": "German",
-    "fr-FR": "French",
-    "zh-CN": "Chinese"
-}
-
 /**
  * Function for fetching the HTML for a google news webpage based on certain parameters
  * 
