@@ -13,6 +13,7 @@ const SUP_LANGS = [
     { sent: "zh", news: "zh-CN", value: "Chinese" },
     { sent: "auto", news: "auto", value: "Automatic" }
 ]
+
 /**
  * Function for checking if language exists in SUP_LANGS based on a mode
  * 
